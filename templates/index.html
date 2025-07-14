@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оценка настроения отзыва</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Оставьте отзыв</h1>
+    <form method="post">
+        <textarea name="feedback" rows="4" cols="50" required></textarea><br>
+        <button type="submit">Отправить</button>
+    </form>
+    {% if sentiment %}
+        <h2>Результат:</h2>
+        <p>Отзыв: {{ feedback }}</p>
+        <p>Настроение: <strong>{{ sentiment }}</strong></p>
+    {% endif %}
+</body>
+</html>
